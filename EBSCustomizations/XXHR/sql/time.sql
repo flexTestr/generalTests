@@ -1,1 +1,1 @@
-select CURRENT_TIMESTAMP;
+select * from dual;
