@@ -1,3 +1,4 @@
 EXEC DBMS_OUTPUT.PUT_LINE('Hello from DUAL');
-/
+
 EXEC EXECUTE IMMEDIATE 'SELECT sysdate FROM dual';
+/
