@@ -1,1 +1,1 @@
-select * FROM DUAL; -- default Test --
+select * FROM DUAL; -- default Test -- 
