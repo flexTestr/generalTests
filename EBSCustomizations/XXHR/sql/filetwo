@@ -1,1 +1,1 @@
-select * from dual; -- single script with a standard table
+select * from dual; -- single script with a standard table twice.
