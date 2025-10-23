@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DeploymentPackage xmlns="http://www.flexagon.com/flexdeploy/idlt">
+    <PackageName>SampleDeploymentPackage</PackageName>
+    <ProjectId>12345</ProjectId>
+    <ProjectName>SampleProject</ProjectName>
+    <EnvironmentCode>DEV</EnvironmentCode>
+    <Artifacts>
+        <Artifact>
+            <Name>sample-artifact-1</Name>
+            <Type>File</Type>
+            <Path>/path/to/sample-artifact-1.xml</Path>
+        </Artifact>
+        <Artifact>
+            <Name>sample-artifact-2</Name>
+            <Type>SQL</Type>
+            <Path>/path/to/sample-artifact-2.sql</Path>
+        </Artifact>
+    </Artifacts>
+    <Properties>
+        <Property>
+            <Name>DEPLOY_MODE</Name>
+            <Value>FULL</Value>
+        </Property>
+        <Property>
+            <Name>ROLLBACK_ENABLED</Name>
+            <Value>true</Value>
+        </Property>
+    </Properties>
+</DeploymentPackage>
