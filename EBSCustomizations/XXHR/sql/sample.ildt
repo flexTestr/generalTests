@@ -1,34 +1,14 @@
-# Minimal ILDT file to mimic a REST endpoint in EBS ISG
-# This is a dummy service for testing FlexDeploy deployment mechanics
+# Minimal ILDT test file
+# This does not create a real service, just a placeholder object
 
 BEGIN IREP_OBJECT
   OBJECT_TYPE = PLSQL
-  INTERNAL_NAME = TEST_REST_SERVICE
-  DISPLAY_NAME = Test REST Service
-  DESCRIPTION = Dummy REST service for deployment testing
+  INTERNAL_NAME = TEST_DUMMY_SERVICE
+  DISPLAY_NAME = Dummy Test Service
+  DESCRIPTION = Minimal ILDT file for deployment testing
   VERSION = 1.0
   STATUS = ACTIVE
-  AUTH_TYPE = BASIC
+  AUTH_TYPE = NONE
   SERVICE_TYPE = REST
   OWNER = CUST
 END IREP_OBJECT
-
-BEGIN IREP_OPERATION
-  OPERATION_NAME = ping
-  DISPLAY_NAME = Ping
-  DESCRIPTION = Simple test operation that mimics a REST GET
-  METHOD = GET
-  URI_TEMPLATE = /ping
-  INPUT_PARAMETERS =
-  OUTPUT_TYPE = JSON
-END IREP_OPERATION
-
-BEGIN IREP_OPERATION
-  OPERATION_NAME = echo
-  DISPLAY_NAME = Echo
-  DESCRIPTION = Simple test operation that mimics a REST POST
-  METHOD = POST
-  URI_TEMPLATE = /echo
-  INPUT_PARAMETERS = message:VARCHAR2
-  OUTPUT_TYPE = JSON
-END IREP_OPERATION
