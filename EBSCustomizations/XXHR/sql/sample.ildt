@@ -1,29 +1,34 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<DeploymentPackage xmlns="http://www.flexagon.com/flexdeploy/idlt">
-    <PackageName>SampleDeploymentPackage</PackageName>
-    <ProjectId>12345</ProjectId>
-    <ProjectName>SampleProject</ProjectName>
-    <EnvironmentCode>DEV</EnvironmentCode>
-    <Artifacts>
-        <Artifact>
-            <Name>sample-artifact-1</Name>
-            <Type>File</Type>
-            <Path>/path/to/sample-artifact-1.xml</Path>
-        </Artifact>
-        <Artifact>
-            <Name>sample-artifact-2</Name>
-            <Type>SQL</Type>
-            <Path>/path/to/sample-artifact-2.sql</Path>
-        </Artifact>
-    </Artifacts>
-    <Properties>
-        <Property>
-            <Name>DEPLOY_MODE</Name>
-            <Value>FULL</Value>
-        </Property>
-        <Property>
-            <Name>ROLLBACK_ENABLED</Name>
-            <Value>true</Value>
-        </Property>
-    </Properties>
-</DeploymentPackage>
+# Minimal ILDT file to mimic a REST endpoint in EBS ISG
+# This is a dummy service for testing FlexDeploy deployment mechanics
+
+BEGIN IREP_OBJECT
+  OBJECT_TYPE = PLSQL
+  INTERNAL_NAME = TEST_REST_SERVICE
+  DISPLAY_NAME = Test REST Service
+  DESCRIPTION = Dummy REST service for deployment testing
+  VERSION = 1.0
+  STATUS = ACTIVE
+  AUTH_TYPE = BASIC
+  SERVICE_TYPE = REST
+  OWNER = CUST
+END IREP_OBJECT
+
+BEGIN IREP_OPERATION
+  OPERATION_NAME = ping
+  DISPLAY_NAME = Ping
+  DESCRIPTION = Simple test operation that mimics a REST GET
+  METHOD = GET
+  URI_TEMPLATE = /ping
+  INPUT_PARAMETERS =
+  OUTPUT_TYPE = JSON
+END IREP_OPERATION
+
+BEGIN IREP_OPERATION
+  OPERATION_NAME = echo
+  DISPLAY_NAME = Echo
+  DESCRIPTION = Simple test operation that mimics a REST POST
+  METHOD = POST
+  URI_TEMPLATE = /echo
+  INPUT_PARAMETERS = message:VARCHAR2
+  OUTPUT_TYPE = JSON
+END IREP_OPERATION
